@@ -41,14 +41,14 @@ function GiphyAPIService($http){
     };
 
 	this.favoriteGif = function(favorite){
-		return $http.post('/home',favorite)
+		return $http.post('/gifs',favorite)
 		.then(function(response){
 			return response;
 		});
 	};
 
 	this.getFavoriteGifs = function(){
-		return $http.get('/home')
+		return $http.get('/gifs')
 		.then(function(response){
 			return response;
 		});

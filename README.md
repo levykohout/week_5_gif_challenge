@@ -1,11 +1,16 @@
-# Angular Service Solo Challenge
+# Weekend 5 Challenge
 
-A challenge to refactor existing code from pervious challenge using Angular Service method.
+This weekend you will revisit the Giphy API to create an application that flexes your knowledge of Angular, Angular routes, server-side logic, and SQL!
 
 ## Features
 
-- A random button that will display a random gif.
-- A search input and a button that will display searched gif.
+In this application, users will be able to
+
+- get a random Giphy or search for a Giphy by keyword
+- save their favorite gifs along with a note about why they like that gif
+- view a list of their favorite gifs w/notes
+
+
 
 ## Technologies Used
 
@@ -14,3 +19,6 @@ A challenge to refactor existing code from pervious challenge using Angular Serv
 - API (using giphy)
 - css
 - html
+- express
+- node(npm)
+- Postgresql

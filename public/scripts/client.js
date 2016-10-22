@@ -1,21 +1,25 @@
 angular.module('giphyApp')
         .controller('MainController', MainController);
 
+angular.module('giphyApp')
+        .controller('FavoriteController', FavoriteController);
+
+
+
+
+
 
 function MainController (giphy){
 
     var main = this;
 
-
-
     console.log('MainController loaded!');
-    //
+
     main.random=[];
     main.searchresults=[];
     main.favorites={};
     main.favoritesArray=[];
     main.favoriteCount=0;
-
 
     giphy.getGifsData(main.search).then(function(gif){
 
@@ -25,8 +29,9 @@ function MainController (giphy){
 
     main.getGifsData =function(){
         giphy.getGifsData().then(function(gif){
+            console.log(gif);
 
-            main.random = gif.image_original_url;
+            main.random = gif.fixed_width_downsampled_url;
 
         });
 
@@ -59,8 +64,8 @@ function MainController (giphy){
 
     main.getFavoriteGifs = function(){
         giphy.getFavoriteGifs().then(function(response){
-            main.favoritesArray = response;
-            console.log(main.favoritesArray);
+            main.favoritesArray = response.data;
+            console.log('array from main controller', main.favoritesArray);
             main.favoriteCount=response.data.length;
             console.log(main.favoriteCount);
         });
@@ -68,4 +73,29 @@ function MainController (giphy){
     };
 
     main.getFavoriteGifs();
+}
+
+
+function FavoriteController(giphy){
+
+    console.log('FavoriteController loaded!')
+
+    var liked=this;
+    liked.favoritesArray=[];
+    liked.favoriteCount=0;
+
+
+    liked.getFavoriteGifs = function(){
+        giphy.getFavoriteGifs().then(function(response){
+            liked.favoritesArray = response.data;
+            console.log('array from FavoriteController', liked.favoritesArray);
+            liked.favoriteCount=response.data.length;
+            console.log(liked.favoriteCount);
+        });
+
+    };
+
+    liked.getFavoriteGifs();
+
+
 }
