@@ -1,0 +1,13 @@
+<h1 ng-app="giphyApp" ng-controller="MainController as main">favorites</h1>
+<table>
+    <thead>
+        <th>Favorite Gif</th>
+        <th>Comment</th>
+    </thead>
+    <tr ng-repeat="gif in main.favoritesArray">
+        <td><img ng-src="{{gif.gif}}" /></td>
+
+        <td>{{gif.comment}}</td>
+    </tr>
+</table>
+<img src="{{main.favoriteId}}" alt="" />

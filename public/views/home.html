@@ -1,0 +1,45 @@
+
+
+<main class="container">
+
+    <h1 class="jumbotron text-center">GIPHY SOLO CHALLENGE</h1>
+    <div class="row">
+        <div class="firstpic col-md-6 clearfix">
+        <a href="/home" class="pull-left">HOME</a>
+        <span class="pull-right"><a href="/favorites" >FAVORITES </a><span class="pull-right"> ( {{ main.favoriteCount }} )</span></span>
+        <img ng-src="{{main.random}}" />
+    </div>
+        <div class="col-md-6">
+            <h3>Get Another GIF!</h3>
+
+                <div class="input-group search-box pull-right">
+
+                    <input type="text" class="form-control" placeholder="Search&hellip;" ng-model="main.search" />
+
+                    <span class="input-group-btn" >
+                        <button type="button" class="btn btn-default" ng-click="main.getSearchData(main.search)" class="search">Search Gifs</button>
+                    </span>
+                </div>
+                <div class="random"><button class="btn btn-lg btn-block" ng-click="main.getGifsData()" class="one">Get a random gif</button></div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 input-group pull-left">
+            <input type="text" class="form-control" ng-model="main.comment" placeholder="Comment here&hellip;">
+
+            <button type="button" class="btn btn-lg btn-block" ng-click="main.favoriteGif(main.comment,main.random)">Favorite this gif</button>
+
+        </div>
+
+
+        <div class="col-md-6 clearfix pull-right"></div>
+    </div>
+    <div class="row" ng-class="main.class">
+        <ul class="list-unstyled" ng-repeat="gif in main.searchresults">
+            <li class="pull-left col-md-2">
+                <img class="img-responsive searched-image pull-left" ng-src="{{gif.images.downsized.url}}" />
+            </li>
+        </ul>
+    </div>
+
+</main>

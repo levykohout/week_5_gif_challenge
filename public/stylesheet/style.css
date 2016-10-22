@@ -1,0 +1,9 @@
+img{
+    width:100% !important;
+}
+
+.searched-image {
+    width:100% !important;
+    height: 150px !important;
+    margin: 10px !important;
+}
