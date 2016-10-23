@@ -1,6 +1,6 @@
 # Weekend 5 Challenge
 
-This challenge is a challenge to refactor the API Giphy Challenge previously made with more features added to expand our knowledge of Angular, Angular routes and services, server-side logic, SQL and Bootstrap!
+In this challenge, we refactor the API Giphy code previously made and added more features to expand our knowledge in Angular, Angular routes,controller and services, server-side logic, SQL and Bootstrap.
 
 ## Features
 
