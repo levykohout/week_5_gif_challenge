@@ -63,6 +63,7 @@ function GiphyAPIService($http){
 
 
 	this.deleteFavoriteGif = function(id){
+		console.log(id);
 		return $http.delete('/gifs/'+ id).then(function(response){
 			return response;
 		},function(err){
