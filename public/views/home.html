@@ -37,7 +37,7 @@
             <li class="pull-left col-md-3" id="wrapper">
                 <img class="img-responsive searched-image pull-left" ng-src="{{gif.images.downsized.url}}" />
                 <div class="text-center" id="button">
-                   <a ng-click="main.favoriteGif(gif)" data-role="button"><i class="fa fa-star" aria-hidden="true"></i> Add to Favorites</a>
+                   <a ng-click="main.favoriteGif(main.search,gif.images.downsized.url)" data-role="button"><i class="fa fa-star" aria-hidden="true"></i> Add to Favorites</a>
                 </div>
 
             </li>
