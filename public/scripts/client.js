@@ -6,9 +6,6 @@ angular.module('giphyApp')
 
 
 
-
-
-
 function MainController (giphy){
 
     var main = this;
@@ -96,12 +93,20 @@ function FavoriteController(giphy){
 
     };
 
-    liked.updateFavoriteGif=function($index, updateComment){
+    liked.updateFavoriteGif=function(id,gif,updateComment){
 
+        console.log(id, gif, updateComment);
+        giphy.updateFavoriteGif(id,gif,updateComment)
+            .then(function(response){
+                liked.getFavoriteGifs();
+            });
     };
 
-    liked.deleteFavoriteGif = function($index){
-
+    liked.deleteFavoriteGif = function(id){
+        giphy.deleteFavoriteGif(id)
+        .then(function(response){
+        liked.getFavoriteGifs();
+        });
 
     };
 

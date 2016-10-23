@@ -54,4 +54,19 @@ function GiphyAPIService($http){
 		});
 	};
 
+	this.updateFavoriteGif = function(id,gif,comment){
+		console.log(comment);
+		return $http.put('/gifs/' + id ,{id:id,gif:gif, comment:comment}).then(function(response){
+			return response;
+		});
+	};
+
+
+	this.deleteFavoriteGif = function(id){
+		return $http.delete('/gifs/'+ id).then(function(response){
+			return response;
+		},function(err){
+			console.log(err);
+		});
+	};
 }
