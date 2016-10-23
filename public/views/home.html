@@ -12,29 +12,34 @@
             <div class="input-group pull-right">
                 <input type="text" class="form-control" placeholder="Search&hellip;" ng-model="main.search" />
                 <span class="input-group-btn">
-                    <button type="button" class="btn btn-default" ng-click="main.getSearchData(main.search)" class="search">Go</button>
+                    <button type="button" class="btn btn-primary" ng-click="main.getSearchData(main.search)" class="search">Search</button>
                 </span>
             </div>
             <div class="random">
-                <button class="btn btn-lg btn-block" ng-click="main.getGifsData()" class="one">Get a random gif</button>
+                <button class="btn btn-lg btn-block btn-danger" ng-click="main.getGifsData()" class="one">Get a random gif</button>
             </div>
         </div>
     </div>
 
     <div class="row">
-        <div class="col-md-6">
-            <div class="input-group comment-box pull-left">
+        <div class="col-md-12">
+            <div class="input-group col-md-6 comment-box pull-left">
                 <input type="text" class="form-control" ng-model="main.comment" placeholder="Comment here&hellip;">
-                <button type="button" class="btn btn-lg btn-block" ng-click="main.favoriteGif(main.comment,main.random)">Favorite this gif</button>
+                <button type="button" class="btn btn-lg btn-block btn-danger" ng-click="main.favoriteGif(main.comment,main.random)"><i class="fa fa-star" aria-hidden="true"></i> Add to Favorites</button>
             </div>
         </div>
-        <div class="col-md-6 comment-box"></div>
+        <!-- <div class="col-md-6 comment-box"></div> -->
     </div>
+
 
     <div class="row" ng-class="main.class">
         <ul class="list-unstyled" ng-repeat="gif in main.searchresults">
-            <li class="pull-left col-md-3">
+            <li class="pull-left col-md-3" id="wrapper">
                 <img class="img-responsive searched-image pull-left" ng-src="{{gif.images.downsized.url}}" />
+                <div class="text-center" id="button">
+                   <a ng-click="main.favoriteGif(gif)" data-role="button"><i class="fa fa-star" aria-hidden="true"></i> Add to Favorites</a>
+                </div>
+
             </li>
         </ul>
     </div>

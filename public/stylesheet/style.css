@@ -1,3 +1,10 @@
+h1 {
+    background-color: grey;
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
+    padding:40px;
+}
+
 img{
     width:100% !important;
 }
@@ -9,6 +16,7 @@ img{
 
 body {
     padding-bottom: 150px;
+    background: repeating-linear-gradient( 0deg, grey, white 40%, grey );
 }
 
 main{
@@ -18,4 +26,8 @@ main{
 
 .row {
     margin-top: 20px;
+}
+
+i {
+    font-size: 200%;
 }

@@ -7,8 +7,8 @@
             <div class="input-group comment-box pull-left">
                 <img class="image-size" ng-src="{{favorite.gif}}" />
                 <input type="text" class="form-control" ng-model="liked.updateComment[favorite.id]" placeholder="{{favorite.note}}">
-                <button type="button" class="btn" ng-click="liked.updateFavoriteGif(favorite.id,favorite.gif,(liked.updateComment[favorite.id]))">Update</button>
-                <button type="button" class="btn" ng-click="liked.deleteFavoriteGif(favorite.id)">Delete</button>
+                <button type="button" class="btn btn-primary" ng-click="liked.updateFavoriteGif(favorite.id,favorite.gif,(liked.updateComment[favorite.id]))">Update</button>
+                <button type="button" class="btn btn-danger" ng-click="liked.deleteFavoriteGif(favorite.id)">Delete</button>
             </div>
         </div>
         <div class="col-md-6 comment-box"></div>
