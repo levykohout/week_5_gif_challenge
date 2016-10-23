@@ -1,13 +1,16 @@
-<h1>favorites</h1>
+<h2 class=" text-center vertical-align">Favorite GIFS</h2>
 
 
-<div class="row" ng-class="main.class">
-    <ul class="list-unstyled" ng-repeat="favorite in liked.favoritesArray">
-        <li class="pull-left col-md-3">
-            <img ng-src="{{favorite.gif}}" />
-        </li>
-        <li>
-            {{favorite.note}}
-        </li>
-    </ul>
-</div>
+<main>
+    <div class="row">
+        <div class="col-md-3" ng-repeat="favorite in liked.favoritesArray">
+            <div class="input-group comment-box pull-left">
+                <img class="image-size" ng-src="{{favorite.gif}}" />
+                <input type="text" class="form-control" ng-model="liked.updateComment" placeholder="{{favorite.note}}">
+                <button type="button" class="btn" ng-click="liked.updateFavoriteGif($index,liked.updateComment)">Update</button>
+                <button type="button" class="btn" ng-click="liked.deleteFavoriteGif($index)">Delete</button>
+            </div>
+        </div>
+        <div class="col-md-6 comment-box"></div>
+    </div>
+</main>

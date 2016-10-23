@@ -2,8 +2,20 @@ img{
     width:100% !important;
 }
 
-.searched-image {
-    width:100% !important;
-    height: 150px !important;
+.searched-image,.image-size {
+    height: 200px !important;
     margin: 10px !important;
+}
+
+body {
+    padding-bottom: 150px;
+}
+
+main{
+    width:80% !important;
+    margin: 0 auto;
+}
+
+.row {
+    margin-top: 20px;
 }

@@ -1,7 +1,6 @@
 
 <main class="container">
 
-    <h1 class="jumbotron text-center">GIPHY SOLO CHALLENGE</h1>
     <div class="row">
         <div class="firstpic col-md-6 clearfix">
             <a href="/home" class="pull-left">HOME</a>
@@ -10,32 +9,31 @@
         </div>
         <div class="col-md-6">
             <h3>Get Another GIF!</h3>
-
-            <div class="input-group search-box pull-right">
-
+            <div class="input-group pull-right">
                 <input type="text" class="form-control" placeholder="Search&hellip;" ng-model="main.search" />
-
                 <span class="input-group-btn">
-                            <button type="button" class="btn btn-default" ng-click="main.getSearchData(main.search)" class="search">Search Gifs</button>
-                        </span>
+                    <button type="button" class="btn btn-default" ng-click="main.getSearchData(main.search)" class="search">Go</button>
+                </span>
             </div>
-            <div class="random"><button class="btn btn-lg btn-block" ng-click="main.getGifsData()" class="one">Get a random gif</button></div>
+            <div class="random">
+                <button class="btn btn-lg btn-block" ng-click="main.getGifsData()" class="one">Get a random gif</button>
+            </div>
         </div>
     </div>
+
     <div class="row">
-        <div class="col-md-6 input-group pull-left">
-            <input type="text" class="form-control" ng-model="main.comment" placeholder="Comment here&hellip;">
-
-            <button type="button" class="btn btn-lg btn-block" ng-click="main.favoriteGif(main.comment,main.random)">Favorite this gif</button>
-
+        <div class="col-md-6">
+            <div class="input-group comment-box pull-left">
+                <input type="text" class="form-control" ng-model="main.comment" placeholder="Comment here&hellip;">
+                <button type="button" class="btn btn-lg btn-block" ng-click="main.favoriteGif(main.comment,main.random)">Favorite this gif</button>
+            </div>
         </div>
-
-
-        <div class="col-md-6 clearfix pull-right"></div>
+        <div class="col-md-6 comment-box"></div>
     </div>
+
     <div class="row" ng-class="main.class">
         <ul class="list-unstyled" ng-repeat="gif in main.searchresults">
-            <li class="pull-left col-md-2">
+            <li class="pull-left col-md-3">
                 <img class="img-responsive searched-image pull-left" ng-src="{{gif.images.downsized.url}}" />
             </li>
         </ul>

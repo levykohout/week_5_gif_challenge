@@ -22,8 +22,9 @@ function MainController (giphy){
     main.favoriteCount=0;
 
     giphy.getGifsData(main.search).then(function(gif){
+        console.log(gif);
 
-        main.random = gif.image_original_url;
+        main.random = gif.fixed_height_downsampled_url;
 
     });
 
@@ -31,7 +32,7 @@ function MainController (giphy){
         giphy.getGifsData().then(function(gif){
             console.log(gif);
 
-            main.random = gif.fixed_width_downsampled_url;
+            main.random = gif.fixed_height_downsampled_url;
 
         });
 
@@ -92,6 +93,15 @@ function FavoriteController(giphy){
             liked.favoriteCount=response.data.length;
             console.log(liked.favoriteCount);
         });
+
+    };
+
+    liked.updateFavoriteGif=function($index, updateComment){
+
+    };
+
+    liked.deleteFavoriteGif = function($index){
+
 
     };
 
