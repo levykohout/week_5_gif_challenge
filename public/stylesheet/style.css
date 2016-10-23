@@ -7,6 +7,7 @@ h1 {
 
 img{
     width:100% !important;
+    height:400px;
 }
 
 .searched-image,.image-size {
@@ -30,4 +31,8 @@ main{
 
 i {
     font-size: 200%;
+}
+
+button,input {
+    margin-bottom: 5px !important;
 }
