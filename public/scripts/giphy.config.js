@@ -3,7 +3,6 @@ angular.module('giphyApp').config(function($routeProvider,$locationProvider){
     $routeProvider.when('/', {  //browser
         templateUrl:'views/home.html',
         controller: 'MainController as main'
-
     }).when('/home', {  //browser
         templateUrl:'views/home.html',
         controller: 'MainController as main'

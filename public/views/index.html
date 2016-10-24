@@ -4,32 +4,30 @@
 <head>
     <meta charset="utf-8">
     <title>Angular Service Solo Challenge</title>
-    <!-- <link rel="stylesheet" href="http://media1.giphy.com/media/l2SpVS6cO8rrI1xTi/giphy-tumblr.gifstyle.css" /> -->
+    <!-- bootstrap css files -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="stylesheet/style.css">
-
+    <!-- for bootstrap jquery -->
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
+    <!-- local directory js files -->
     <script type="text/javascript" src="vendor/angular.min.js"></script>
     <script type="text/javascript" src="vendor/angular-route.min.js"></script>
     <script type="text/javascript" src="scripts/giphy.module.js"></script>
     <script type="text/javascript" src="scripts/client.js"></script>
     <script type="text/javascript" src="scripts/giphy.service.js"></script>
     <script type="text/javascript" src="scripts/giphy.config.js"></script>
-
-
+    <!-- font awesome for networking icons -->
     <script src="https://use.fontawesome.com/33ea795759.js"></script>
-
 
     <base href="/" />
 </head>
 
 <body>
     <h1 class=" text-center vertical-align">GIPHY SOLO CHALLENGE</h1>
+    <!-- top nav bar -->
     <nav class="navbar navbar-inverse">
         <div class="container-fluid">
-
             <ul class="nav navbar-nav">
                 <li><a href="/home" class="pull-left"><span class="glyphicon glyphicon-home"></span> HOME</a></li>
                 <li><a href="/favorites"><span class="glyphicon glyphicon-heart"></span> FAVORITES </a></li>
@@ -38,15 +36,11 @@
             </ul>
         </div>
     </nav>
-
-
-
-
-
+    <!-- angular route view -->
     <ng-view>
 
     </ng-view>
-
+    <!-- bottom nav -->
     <div class="navbar navbar-inverse navbar-fixed-bottom">
         <div class="container-fluid">
             <p class="navbar-text pull-left">© 2016 Designed by Levy Kohout with Bootstrap and Fontawesome</p>
@@ -57,11 +51,7 @@
             <a href="https://www.linkedin.com/in/levy-kohout" class="navbar-btn btn-primary btn pull-right">
                 <i class="fa fa-linkedin" aria-hidden="true"></i></a>
         </div>
-
-
     </div>
-
-
 </body>
 
 </html>

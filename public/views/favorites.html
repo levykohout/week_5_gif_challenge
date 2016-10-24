@@ -8,12 +8,11 @@
                 <img class="image-size" ng-src="{{favorite.gif}}" />
                 <input type="text" class="form-control" ng-model="liked.updateComment[favorite.id]" placeholder="{{favorite.note}}">
                 <button type="button" href="#myModal" data-toggle="modal" class="btn btn-primary" ng-click="liked.updateFavoriteGif(favorite.id,favorite.gif,(liked.updateComment[favorite.id]))"><span class="glyphicon glyphicon-floppy-save"></span> Save</button>
-                <button type="button" ng-click="liked.deleteFavoriteGif(favorite.id)"  class="btn btn-warning" ><span class="glyphicon glyphicon-trash"></span> Remove</button>
+                <button type="button" ng-click="liked.deleteFavoriteGif(favorite.id)" class="btn btn-warning"><span class="glyphicon glyphicon-trash"></span> Remove</button>
             </div>
         </div>
         <div class="col-md-6 comment-box"></div>
-        </div>
-
+    </div>
 
     <!-- Modal HTML Bootstrap -->
     <div id="myModal" class="modal fade">
