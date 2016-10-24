@@ -4,6 +4,8 @@ angular.module('giphyApp')
 angular.module('giphyApp')
     .controller('FavoriteController', FavoriteController);
 
+
+
 function MainController(giphy) {
 
     var main = this;
@@ -15,6 +17,7 @@ function MainController(giphy) {
     main.favorites = {};
     main.favoritesArray = [];
     main.favoriteCount = 0;
+    main.url='';
 
     giphy.getGifsData().then(function(gif) {
         main.random = gif.fixed_height_downsampled_url;
@@ -43,9 +46,9 @@ function MainController(giphy) {
 
     };
 
-    main.favoriteGif = function(comment, gif) {
+    main.favoriteGif = function(comment) {
         main.favorites = {
-            gif: gif,
+            gif: main.url,
             comment: comment
         };
         main.favoriteCount++;
@@ -62,6 +65,11 @@ function MainController(giphy) {
             main.favoritesArray = response.data;
             main.favoriteCount = response.data.length;
         });
+    };
+
+    main.getFavoriteUrl=function(url){
+        console.log(url);
+        main.url=url;
     };
 
     main.getFavoriteGifs(); //load data from the database on load
