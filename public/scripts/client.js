@@ -19,15 +19,16 @@ function MainController(giphy) {
     main.favoriteCount = 0;
     main.url='';
 
-    giphy.getGifsData().then(function(gif) {
+    main.displayRandomGifs= function(){
+        giphy.getGifsData().then(function(gif) {
         main.random = gif.fixed_height_downsampled_url;
-    });
+        });
+    };
+
+    main.displayRandomGifs();
 
     main.getGifsData = function() {
-        giphy.getGifsData().then(function(gif) {
-            main.random = gif.fixed_height_downsampled_url;
-        });
-
+        main.displayRandomGifs();
     };
 
 
@@ -83,6 +84,7 @@ function FavoriteController(giphy) {
     var liked = this;
     liked.favoritesArray = [];
     liked.favoriteCount = 0;
+    liked.gifId=0;
 
     liked.getFavoriteGifs = function() {
         giphy.getFavoriteGifs().then(function(response) {
@@ -98,11 +100,18 @@ function FavoriteController(giphy) {
             });
     };
 
-    liked.deleteFavoriteGif = function(id) {
-        giphy.deleteFavoriteGif(id)
+    liked.deleteFavoriteGif = function() {
+        console.log(liked.gifId);
+        giphy.deleteFavoriteGif(liked.gifId)
             .then(function(response) {
                 liked.getFavoriteGifs();
             });
+    };
+
+    liked.getIdToBeDeleted = function(id){
+        console.log(id);
+        liked.gifId=id;
+        console.log(liked.gifId);
     };
 
     liked.getFavoriteGifs(); //load data from the database on load
