@@ -38,7 +38,17 @@ function MainController (giphy){
 
     main.getSearchData =function(){
         giphy.getSearchData(main.search).then(function(gifs){
-         main.searchresults = gifs;
+            console.log(gifs.length);
+
+        //randomly display 1 gif from search result
+            main.getNumber = function() {
+                main.num = (Math.ceil(Math.random() * gifs.length));
+            };
+            main.getNumber();        
+        main.searchresults = gifs;
+        main.random = main.searchresults[main.num].images.fixed_height_downsampled.url;
+        console.log(main.searchresults.length);
+        console.log(main.random);
         });
 
     };
