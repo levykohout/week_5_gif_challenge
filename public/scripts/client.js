@@ -39,7 +39,6 @@ function MainController(giphy) {
             main.getNumber();
             main.searchresults = gifs;
             main.random = main.searchresults[main.num].images.fixed_height_downsampled.url;
-            main.search = '';
         });
 
     };
